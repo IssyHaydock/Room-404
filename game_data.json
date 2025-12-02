@@ -1,0 +1,10 @@
+{
+  "start room": {
+    "description": "You are in the Main Hub of the escape game. In front of you are three doors:\n1) A RED door (Server Room)\n2) A BLUE door (Chemical Storage)\n3) A GREEN door (Teaching Lab)\nChoose one door to enter.",
+    "choice": {
+      "Red": "Server Room",
+      "Blue": "Chemical Storage",
+      "Green": "Teaching Lab"
+    }
+  }
+}
