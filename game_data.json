@@ -1,10 +1,51 @@
 {
   "start room": {
-    "description": "You are in the Main Hub of the escape game. In front of you are three doors:\n1) A RED door (Server Room)\n2) A BLUE door (Chemical Storage)\n3) A GREEN door (Teaching Lab)\nChoose one door to enter.",
+    "description": "You are in the Main Hub of the escape game. In front of you are three doors:\n1) Server Room\n2) Chemical Storage\n3) Teaching Lab\nChoose one door to enter.",
     "choice": {
-      "Red": "Server Room",
-      "Blue": "Chemical Storage",
-      "Green": "Teaching Lab"
+      "1": "Server Room",
+      "2": "Chemical Storage",
+      "3": "Teaching Lab"
     }
+  },
+  "inventory": [],
+  "rooms": {
+    "Server Room": {
+      "description": "You enter a room labelled 'Server Room'. The walls are lined with server racks and blinking lights.",
+      "directions": "\nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
+      "choice": {
+        "1": {
+          "text": "To your left is a desk with a computer. The computer is turned OFF.\nMaybe you need to plug in one of the cables you saw elsewhere to power it on.\nFor now, nothing happens when you press the keys."
+        },
+        "2": {
+          "text": "Ahead of you is a heavy metal door. Above it, a flickering sign reads 'EXIT'.\nThe door is firmly locked. It looks like something else in the room might control it."
+        },
+        "3": {
+          "text": "To your right you see three cables hanging from the wall: RED, YELLOW, and GREEN.\nYou can try plugging one of them into the nearby power socket.\n1) Plug in the RED cable\n2) Plug in the YELLOW cable\n3) Plug in the GREEN cable",
+          "choice": {
+            "1": {
+              "type": "puzzle",
+              "text": "You plug in the RED cable. The computer on the left whirs to life and the monitor flickers on.\nOn the screen you see a prompt: 'ENTER PASSWORD (4 letters)'.\nEnter the 4-letter password:",
+              "code": "EXIT",
+              "success": "Correct! The computer beeps and you hear a loud click from the EXIT door.\nThe door swings open and you step through to the next area.",
+              "fail": "Incorrect password. The screen flashes red for a moment, then returns to the prompt."
+            },
+            "2": {
+              "type": "",
+              "text": "You plug in the YELLOW cable. Nothing happens. The room stays dark and the computer stays OFF."
+            },
+            "3": {
+              "type": "",
+              "text": "You plug in the GREEN cable. Sparks explode from the socket and you jump back in shock.\nThat was definitely not the right cable. Maybe try another one."
+            }
+          }
+        }
+      },
+      "hint": "The EXIT sign might be more important than it looks."
+    }
+
   }
 }
+
+ 
+
+  
