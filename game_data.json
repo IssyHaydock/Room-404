@@ -41,7 +41,43 @@
         }
       },
       "hint": "The EXIT sign might be more important than it looks."
-    }
+    },
+
+    //Chemical Storage
+
+    //Teaching Lab
+
+    "Research Lab": {
+      "description": "You enter a room labelled 'Research Lab' and see scientific equipment scattered across the room.",
+      "directions": "\nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
+      "choice": {
+        "1": {
+          "text": "To your left is a desk with a microscope.\nYou decide to look in the microscope. Through the lens you see four numbers in different colours:\nGreen: 6\nBlue: 4\nRed: 8\nYellow: 9\n*Note added to inventory",
+          "item": "Note:\nGreen: 6\nBlue: 4\nRed: 8\nYellow: 9"
+        },
+        "2": {
+          "text": "Ahead of you is a table with testing equipment.\nOn the table there are a series of test tubes lined up which contain red, green, blue, and yellow liquids."
+        },
+        "3": {
+          "text": "To your right is another door.\nThe door is locked.\nThere is a keypad which requires a 4-digit code to unlock it...\n1) Enter the code?\n2) Go back",
+          "choice": {
+            "1": {
+              "type": "puzzle",
+              "text": "Enter the code: ",
+              "code": "8649",
+              "success": "Correct!",
+              "fail": "Incorrect passcode."
+            },
+            "2": {
+              "text": "You are back at the entrance to the room."
+            }
+          }
+        },
+      "hint": "Look carefully at the colours of the test tubes."
+      }
+    },
+
+    //Analytic Lab
 
   }
 }
