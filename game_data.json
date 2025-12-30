@@ -1,13 +1,13 @@
 {
   "start room": {
-    "description": "You are in the Main Hub of the escape game. In front of you are three doors:\n1) Server Room\n2) Chemical Storage\n3) Teaching Lab\nChoose one door to enter.",
+    "description": "You are in the Main Hub of the escape game. In front of you are three doors:\n1) Server Room\n2) Chemical Room\n3) Teaching Lab\nChoose one door to enter.",
     "choice": {
       "1": "Server Room",
-      "2": "Chemical Storage",
+      "2": "Chemical Room",
       "3": "Teaching Lab"
     }
   },
-  "inventory": [],
+
   "rooms": {
     "Server Room": {
       "description": "You enter a room labelled 'Server Room'. The walls are lined with server racks and blinking lights.",
@@ -66,15 +66,15 @@
               "text": "Enter the code: ",
               "code": "8649",
               "success": "Correct!",
-              "fail": "Incorrect passcode."
+              "fail": "Incorrect passcode.\n1) Try again?\n2) Go back"
             },
             "2": {
               "text": "You are back at the entrance to the room."
             }
           }
-        },
+        }
+      },
       "hint": "Look carefully at the colours of the test tubes."
-      }
     },
 
     //Analytic Lab
