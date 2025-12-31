@@ -1,4 +1,5 @@
 #Room 404
+from fileinput import filename
 import json
 import time
 
@@ -273,4 +274,50 @@ class Game:
                 if search_item.strip(",") in lines:
                     return True
                 else:
+                    print("Item not found in inventory.")
                     return False
+                
+
+def load_data():  #loads game data from json file
+    filename = "game_data_draft.json"
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+            return data
+    except FileNotFoundError:
+        print("File not found")
+        return []
+    except json.JSONDecodeError:
+        print("File not valid")
+        return []
+
+
+if __name__ == '__main__':  #main code, calls all functions
+    data = load_data()
+    if not data:
+        exit()
+    game = Game(data)
+    rooms_list = Game.get_rooms_list(game, data)
+    room = 0
+    inventory = []
+
+    while room == 0:  #repeats until user has chosen the first room
+        Game.start_room(game, data)
+        room = Game.door_choice(game, data)
+ 
+    game_win = False
+    room_index = 3
+ 
+    while game_win != True:  #loops until game is completed
+        game_room = Game.Room(room, data)
+        game_room.get_description(data)
+        room_win = False
+        while room_win != True:  #loops until room is completed
+            room_win = game_room.action(data, inventory)
+        if room_index == len(rooms_list) and room_win == True:
+            game_win = True
+        else:
+            room = rooms_list[room_index]  #moves onto next room
+            room_index += 1
+
+    Game.win(game, data)  #reads win message
