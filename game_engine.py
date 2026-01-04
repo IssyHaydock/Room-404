@@ -279,7 +279,7 @@ class Game:
                 
 
 def load_data():  #loads game data from json file
-    filename = "game_data_draft.json"
+    filename = "game_data.json"
     try:
         with open(filename, "r") as f:
             data = json.load(f)
