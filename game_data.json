@@ -9,8 +9,8 @@
   },
 
   "rooms": {
-    "Server Room": {
-      "description": "You enter a room labelled 'Server Room'. The walls are lined with server racks and blinking lights.",
+     "Server Room": {
+      "description": "You enter a room labelled 'Server Room'. The shelves are lined with various chemicals and lab equipment.",
       "directions": "\nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
       "choice": {
         "1": {
@@ -23,11 +23,20 @@
           "text": "To your right you see three cables hanging from the wall: RED, YELLOW, and GREEN.\nYou can try plugging one of them into the nearby power socket.\n1) Plug in the RED cable\n2) Plug in the YELLOW cable\n3) Plug in the GREEN cable",
           "choice": {
             "1": {
-              "type": "puzzle",
-              "text": "You plug in the RED cable. The computer on the left whirs to life and the monitor flickers on.\nOn the screen you see a prompt: 'ENTER PASSWORD (4 letters)'.\nEnter the 4-letter password:",
-              "code": "EXIT",
-              "success": "Correct! The computer beeps and you hear a loud click from the EXIT door.\nThe door swings open and you step through to the next area.",
-              "fail": "Incorrect password. The screen flashes red for a moment, then returns to the prompt."
+              "text": "You plug in the RED cable. The computer on the left whirs to life and the monitor flickers on.\nOn the screen you see a prompt: 'ENTER PASSWORD (4 letters)'.\n1) Enter the 4-letter password:\n2) Return",
+              "choice": {
+                  "1": {
+                      "type": "puzzle",
+                      "text": "Enter password: ",
+                      "code": "EXIT",
+                      "success": "Correct! The computer beeps and you hear a loud click from the EXIT door.\nThe door swings open and you step through to the next area.",
+                      "fail": "Incorrect password. The screen flashes red for a moment.\n1) Try again?\n2) Go back"
+                  },
+                  "2": {
+                      "text": "You step away from the screen and go back to the entrance of the room."
+                  }
+ 
+              }
             },
             "2": {
               "type": "",
@@ -47,7 +56,7 @@
 
     //Teaching Lab
 
-    "Research Lab": {
+    "Research Lab": 
       "description": "You enter a room labelled 'Research Lab' and see scientific equipment scattered across the room.",
       "directions": "\nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
       "choice": {
