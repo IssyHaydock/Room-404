@@ -56,7 +56,7 @@
 
     //Teaching Lab
 
-    "Research Lab": 
+    "Research Lab": {
       "description": "You enter a room labelled 'Research Lab' and see scientific equipment scattered across the room.",
       "directions": "\nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
       "choice": {
