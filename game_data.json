@@ -86,11 +86,62 @@
       "hint": "Look carefully at the colours of the test tubes."
     },
 
-    //Analytic Lab
-
-  }
-}
-
+   "Analytic Lab": {
+      "description": "You step into the final room of the escape room.\nDusty monitors, scattered glassware and silent machines surround you.\nSomewhere in this analytic lab is the final code you need to escape...",
+      "directions": "\nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
+      "choice": {
+        "1": {
+          "text": "--- Puzzle 1: The Clocks on the Wall ---\nOn one wall you notice two clocks side by side.\n • The first clock is ticking normally, showing a random time.\n • The second clock is completely still, its hands frozen at 12:35.\n\nBetween them, a poster reads: 'A broken clock is right two times a day.'\nBeneath the clocks is a small 4-digit keypad lock.\n\n1) Enter the 4-digit code\n2) Go back",
+          "choice": {
+            "1": {
+              "id": "puzzle1",
+              "type": "puzzle",
+              "text": "Enter the 4-digit code: ",
+              "code": "1235",
+              "success": "Correct! The keypad clicks open.\nYou hear a soft beep from somewhere deeper in the lab.",
+              "fail": "ACCESS DENIED.\n1) Try again\n2) Go back"
+            },
+            "2": {
+              "text": "You step away from the clocks and return to the centre of the room."
+            }
+          }
+        },
+        "2": {
+          "text": "--- Puzzle 2: The Final Research File ---\nYou place the research file on a clear section of the bench.\nAt the top of the front page is the title:\n\n'Anomalous Lab Pathogen Hazard Assessment'\n\nA sticky note is attached:\n'He always hid things in the initials. The title was never just a title.'\n\nA nearby terminal asks for a password.\n\n1) Enter the password\n2) Go back",
+          "choice": {
+            "1": {
+              "id": "puzzle2",
+              "type": "puzzle",
+              "text": "Enter the password: ",
+              "code": "ALPHA",
+              "success": "The terminal accepts the password.\nOnscreen, a short log appears:\n'Final note: Systems will only respond to baseline conditions. No exceptions.'\nUnderneath, a list of lab labels appears: Freezing point, Neutral pH, Room temp.",
+              "fail": "ACCESS DENIED.\n1) Try again\n2) Go back"
+            },
+            "2": {
+              "text": "You close the file and step away from the terminal."
+            }
+          }
+        },
+        "3": {
+          "text": "--- Puzzle 3: Analyzer Emergency Override ---\nIn the corner, a large device labelled 'Analyzer Mk III' hums quietly.\nA screen above a numeric keypad reads:\n'EMERGENCY OVERRIDE: ENTER BASELINE CONDITIONS.'\n\nOn the bench beside it, you see three labelled items:\n • Freezing point of water (°C)\n • Neutral pH value\n • Standard room temperature (°C)\n\nA handwritten note is taped to the console:\n'When all else fails, return to the essential conditions.'\n\n1) Enter the 4-digit code\n2) Go back",
+          "choice": {
+            "1": {
+              "id": "puzzle3",
+              "type": "puzzle",
+              "text": "Enter the 4-digit code: ",
+              "code": "0720",
+              "success": "Correct!\nThe final console powers down.\nEmergency lights fade as the main door unlocks with a deep metallic thud.\nYou’ve successfully shut down the analytic lab systems and escaped the facility.",
+              "fail": "Incorrect code.\n1) Try again\n2) Go back"
+            },
+            "2": {
+              "text": "You step away from the Analyzer."
+            }
+          }
+        }
+      },
+      "hint": "Clocks → initials → baseline conditions."
+    }
+  },
  
-
-  
+  "success": "Congratulations! You have completed Room 404 Escape Room!"
+}
