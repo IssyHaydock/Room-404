@@ -56,7 +56,7 @@
     "Chemical Room": {
       "description": "You chose the room labelled 'chemical control room'. There are three different options that you can see that might lead to an exit.",
       "directions": "\nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
-      "choices": {
+      "choice": {
         "1": {
           "text": "You see a set of lockers that have names of staff on them. They do not seem to be unlocked; however, you wonder if you can open them either way.",
           "outcome": {
