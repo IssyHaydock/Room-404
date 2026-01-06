@@ -52,11 +52,64 @@
       "hint": "The EXIT sign might be more important than it looks."
     },
 
-    //Chemical Storage
+    
+    "chemical room": {
+      "description": "You chose the room labelled 'chemical control room'. There are three different options that you can see that might lead to an exit.",
+      "choices": {
+       "1": {
+         "text": "You see a set of lockers that have names of staff on them. They do not seem to be unlocked; however, you wonder if you can open them either way.",
+         "outcome": {
+           "text": "You pull the doors of all the lockers. Only one opens with a key-card in it; it seems that it may open the exit."
+         }
+       },
+       "2": {
+         "text": "You see an acid cupboard. It has a lock on it and seems to need a key to be opened.",
+         "outcome": {
+           "text": "You go up to the acid cupboard. It will not open without a key.",
+           "force": "You pull the door open. All but one vial of acid breaks; you take the one vial.",
+           "key": "You look for a key but it does not seem to be in the room."
+         }
+       },
+       "3": {
+         "text": "You see a desk that looks like it belonged to a researcher. You think that you can check the desk for anything useful.",
+         "outcome": {
+           "text": "You check the drawers of the desk; however, it does not seem to have anything of value."
+           }
+       }
+      }
+    },
+    "hint": "There are multiple different ways of leaving this room."
+  },
 
-    //Teaching Lab
+    "Teaching Lab": {
+        "description": "You enter an abandoned teaching lab. Benches are covered in dusty equipment, and the room feels creepily quiet. \nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
+        "choice": {
+            "1": {
+                "text": "To your left is a large board covered in equations and diagrams.\nMost of it is smudged and outdated.\nNear the corner, one sequence of numbers is circled repeatedly:\n'3142'\nIt looks deliberately highlighted, as if meant to be remembered."
+            },
+            "2": {
+                "text": "Straight ahead is a small room secured by a keypad.\nA note above it reads: 'AUTHORIZED STAFF ONLY'.\nThe keypad is active, but it requires a passcode."
+            },
+            "3": {
+                "text": "To your right is the teacher’s computer sitting on a desk.\nThe screen is on, but it’s locked behind a 4-digit passcode.\n1) Try to unlock the computer?\n2) Step away from the computer.",
+                "choice": {
+                    "1": {
+                        "type": "puzzle",
+                        "text": "Enter the 4-digit computer passcode:",
+                        "code": "3142",
+                        "success": "Correct! The computer unlocks.\nOn the desktop, a file labeled 'Keypad Code' is immediately visible.\nInside is a note reading: 'Keypad Passcode: 7295'.",
+                        "fail": "Incorrect passcode. The computer remains locked."
+                    },
+                    "2": {
+                        "text": "You step away from the computer. The screen stays lit, waiting."
+                    }
+                }
+            }
+        },
+        "hint": "There may be multiple passcodes that need to be found."
+    },
 
-    "Research Lab": 
+    "Research Lab": {
       "description": "You enter a room labelled 'Research Lab' and see scientific equipment scattered across the room.",
       "directions": "\nChoose which direction to go:\n1) Left\n2) Forward\n3) Right",
       "choice": {
